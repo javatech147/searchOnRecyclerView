@@ -61,12 +61,11 @@ public class MainActivity extends AppCompatActivity {
 
     private void findMatchedStudent(String studentToSearch) {
         ArrayList<Student> matchedStudentList = new ArrayList<>();
-        for(Student student : studentArrayList){
-            String studentName = student.getName().toLowerCase();
-            String studentSearch = studentToSearch.toLowerCase();
-            if(studentName.contains(studentSearch)){
+        for (Student student : studentArrayList) {
+            if (student.getName().toLowerCase().contains(studentToSearch.toLowerCase())) {
                 matchedStudentList.add(student);
             }
+
         }
         adapter.modifyList(matchedStudentList);
     }
